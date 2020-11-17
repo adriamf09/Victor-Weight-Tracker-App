@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.weighttracker.fragments.LoginFragment"
+        android:label="Iniciar sesión"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_approachFragment"
+            app:destination="@id/approachFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_progressFragment"
+            app:destination="@id/progressFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.weighttracker.fragments.RegisterFragment"
+        android:label="Crear cuenta"
+        tools:layout="@layout/fragment_register">
+        <action
+            android:id="@+id/action_registerFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/approachFragment"
+        android:name="com.example.weighttracker.fragments.ApproachFragment"
+        android:label="Abordaje"
+        tools:layout="@layout/fragment_approach">
+        <action
+            android:id="@+id/action_approachFragment_to_progressFragment"
+            app:destination="@id/progressFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addProgressFragment"
+        android:name="com.example.weighttracker.fragments.AddProgressFragment"
+        android:label="Registrar progreso"
+        tools:layout="@layout/fragment_add_progress" >
+        <action
+            android:id="@+id/action_addProgressFragment_to_progressFragment"
+            app:destination="@id/progressFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/progressFragment"
+        android:name="com.example.weighttracker.fragments.ProgressFragment"
+        android:label="Pesos (lbs)"
+        tools:layout="@layout/fragment_progress">
+        <action
+            android:id="@+id/action_progressFragment_to_addProgressFragment"
+            app:destination="@id/addProgressFragment" />
+    </fragment>
+</navigation>
